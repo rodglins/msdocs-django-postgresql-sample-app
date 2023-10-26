@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\restaurant_review",
+    "\\restaurant_review\\templatetags"
   ],
+  "SelectedNode": "\\restaurant_review\\views.py",
   "PreviewInSolutionExplorer": false
 }
