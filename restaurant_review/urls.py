@@ -14,10 +14,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<int:id>/', views.details, name='details'),
-    path('create', views.create_restaurant, name='create_restaurant'),
-    path('add', views.add_restaurant, name='add_restaurant'),
-    path('review/<int:id>', views.add_review, name='add_review'),
     path('editoras/', views.editora_list, name='editora-list'),
     path('editoras/create/', views.editora_create, name='editora-create'),
     path('editoras/edit/<int:editora_id>/', views.editora_edit, name='editora-edit'),
