@@ -28,11 +28,24 @@ from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
-def index(request):
-    print('Request for index page received')
-    restaurants = Restaurant.objects.annotate(avg_rating=Avg('review__rating')).annotate(review_count=Count('review'))
-    return render(request, 'restaurant_review/index.html', {'restaurants': restaurants})
+#def index(request):
+#    print('Request for index page received')
+#    restaurants = Restaurant.objects.annotate(avg_rating=Avg('review__rating')).annotate(review_count=Count('review'))
+#    return render(request, 'restaurant_review/app/index.html', {'restaurants': restaurants})
 
+
+
+def index(request):
+    """Renders the home page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'restaurant_review/app/index.html',
+        {
+            'title':'Library Tools',
+            'year':datetime.now().year,
+        }
+    )
 
 def details(request, id):
     print('Request for restaurant details page received')
