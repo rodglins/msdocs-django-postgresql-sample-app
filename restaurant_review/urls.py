@@ -12,7 +12,10 @@ from django_select2 import urls as select2_urls
 from restaurant_review import forms, views
 from . import views
 
+app_name = 'admin_uab'  # Escolha um nome de namespace personalizado
+
 urlpatterns = [
+    path('admin/', admin.site.urls, name='admin_uab'),
     path('', views.index, name='index'),
     path('editoras/', views.editora_list, name='editora-list'),
     path('editoras/create/', views.editora_create, name='editora-create'),
@@ -56,8 +59,7 @@ urlpatterns = [
          ),
          name='login'),
     path('redirecionar_apos_login/', views.redirecionar_apos_login, name='redirecionar_apos_login'),
-    path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
-    path('admin/', admin.site.urls),
+    path('logout/', LogoutView.as_view(next_page='/'), name='logout')
 ]
 
 if settings.DEBUG:
