@@ -14,8 +14,7 @@ from django.db import connection
 from django.db.models import Avg, Sum, Q, Max, F, Value, CharField, Case, When, Count
 from django.db.models.functions import Concat
 from django.contrib import messages
-from restaurant_review.models import Restaurant, Review
-from .models import Book, Cidade, TipoUsuario, RegistroLivros, AutoresRegistroLivros, Autores, Tombo, Usuario, Emprestimo, TipoDeEmprestimo, StatusEmprestimo, LimiteDeLivros, Editora
+from restaurant_review.models import Book, Cidade, TipoUsuario, RegistroLivros, AutoresRegistroLivros, Autores, Tombo, Usuario, Emprestimo, TipoDeEmprestimo, StatusEmprestimo, LimiteDeLivros, Editora
 from .forms import UsuarioForm, ISBNForm, LivroForm, TomboForm, EmprestimoForm, UsuarioForm2, EditoraForm
 from django_select2.forms import Select2MultipleWidget, ModelSelect2MultipleWidget,Select2Widget
 from django.utils import timezone
