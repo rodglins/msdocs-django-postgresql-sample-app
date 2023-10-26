@@ -9,7 +9,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
 from django_select2 import urls as select2_urls
-from app import forms, views
+from restaurant_review import forms, views
 from . import views
 
 urlpatterns = [
