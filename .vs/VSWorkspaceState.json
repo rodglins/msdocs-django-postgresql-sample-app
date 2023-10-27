@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\azureproject",
-    "\\restaurant_review",
-    "\\restaurant_review\\templates\\app",
-    "\\static\\app"
+    "\\restaurant_review"
   ],
-  "SelectedNode": "\\restaurant_review\\views.py",
+  "SelectedNode": "\\restaurant_review\\urls.py",
   "PreviewInSolutionExplorer": false
 }
