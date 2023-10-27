@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\azureproject",
     "\\restaurant_review",
-    "\\restaurant_review\\templatetags"
+    "\\restaurant_review\\templates\\app",
+    "\\static\\app"
   ],
   "SelectedNode": "\\restaurant_review\\views.py",
   "PreviewInSolutionExplorer": false

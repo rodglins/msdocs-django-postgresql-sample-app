@@ -18,11 +18,12 @@ from restaurant_review.models import Book, Cidade, TipoUsuario, RegistroLivros, 
 from .forms import UsuarioForm, ISBNForm, LivroForm, TomboForm, EmprestimoForm, UsuarioForm2, EditoraForm
 from django_select2.forms import Select2MultipleWidget, ModelSelect2MultipleWidget,Select2Widget
 from django.utils import timezone
-from django.contrib.auth.decorators import user_passes_test, login_required
+from django.contrib.auth.decorators import user_passes_test, login_required, login_not_required
 from django.contrib.auth.models import Group
 from django.views.generic import View, ListView, CreateView, UpdateView
 from django.urls import reverse, reverse_lazy
-from django.views.decorators.csrf import csrf_exempt
+ 
+
 
 
 # Create your views here.
@@ -615,7 +616,7 @@ Definition open views:
 
 
 
-
+@login_not_required
 def search_results(request):
     search_query = request.GET.get('q', '0000')
 
@@ -665,7 +666,7 @@ def search_results(request):
 
 
 
-
+@login_not_required
 def search_books(request):
     if request.method == 'GET':
         query = request.GET.get('query', '0000')  # Obtenha o termo de pesquisa da query string
@@ -673,8 +674,8 @@ def search_books(request):
         books = Book.objects.filter(title__icontains=query)
         return render(request, 'app/search_books.html', {'books': books, 'query': query})
 
-
-def home(request):
+@login_not_required
+def index(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
     return render(
@@ -686,6 +687,7 @@ def home(request):
         }
     )
 
+@login_not_required
 def contact(request):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)
@@ -699,7 +701,7 @@ def contact(request):
         }
     )
 
-
+@login_not_required
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
